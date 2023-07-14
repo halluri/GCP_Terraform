@@ -8,7 +8,6 @@ terraform {
   }
 }
 provider "google"{
-  credentials = file("terraform-learning-391810-751efa905b1f.json")
   project = "terraform-learning-391810"
   region  = var.region
   zone    = var.zone
@@ -103,7 +102,6 @@ terraform {
   backend "gcs" {
     bucket = "terraformbackendbucket"
     prefix = "terraform1"
-    credentials = "terraform-learning-391810-751efa905b1f.json"
     
    }
 } 
