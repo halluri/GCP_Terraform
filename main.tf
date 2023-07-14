@@ -33,10 +33,10 @@ resource "google_storage_bucket" "hp_private_bucket" {
 }
 
 # To put an object in bucket
-resource "google_storage_bucket_object" "countriesWeather" {
-  name   = "countriesWeather.csv"
+resource "google_storage_bucket_object" "Warner-ICC-Centuries" {
+  name   = "Warner-ICC-Centuries.csv"
   bucket = google_storage_bucket.hp_private_bucket.name
-  source = "./countriesWeather.csv"
+  source = "./Warner-ICC-Centuries.csv"
   depends_on = [google_storage_bucket.hp_private_bucket]
 }
 
@@ -49,17 +49,17 @@ resource "google_bigquery_dataset" "hp_dataset" {
 }
 
 # To populate a table in BQ_dataset
-resource "google_bigquery_table" "countries_weather" {
+resource "google_bigquery_table" "Warner-ICC-Centuries" {
   dataset_id  = google_bigquery_dataset.hp_dataset.dataset_id
-  table_id    = "countries_weather"
-  description = "Weather data in different countries"
+  table_id    = "Warner-ICC-Centuries"
+  description = "All ICC Centuries of David Warner"
   deletion_protection=false
 
-  schema = file("countriesWeather.json")
+  schema = file("Warner-ICC-Centuries.json")
 
   external_data_configuration {
     autodetect    = false
-    source_uris   = ["gs://${google_storage_bucket.hp_private_bucket.name}/countriesWeather.csv"]
+    source_uris   = ["gs://${google_storage_bucket.hp_private_bucket.name}/Warner-ICC-Centuries.csv"]
     source_format = "CSV"
 
     /*hive_partitioning_options {
@@ -69,7 +69,7 @@ resource "google_bigquery_table" "countries_weather" {
   }
 
   depends_on = [google_bigquery_dataset.hp_dataset,
-                google_storage_bucket_object.countriesWeather]
+                google_storage_bucket_object.Warner-ICC-Centuries]
 }
 
 

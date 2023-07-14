@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Num",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Score",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Against",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Position",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Innings",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Venue",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Ground",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Date",
+        "mode": "NULLABLE",
+        "type": "DATE",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "Result",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    }
+]
