@@ -61,6 +61,12 @@ resource "google_bigquery_table" "Warner-ICC-Centuries" {
     source_uris   = ["gs://${google_storage_bucket.hp_private_bucket.name}/Warner-ICC-Centuries.csv"]
     source_format = "CSV"
 
+    /* To provide query optimisation in big query, 
+        "Error: googleapi: Error 400: Directory URI /bigstore/hp-private-bucket 
+        does not contain path to table (/bigstore/hp_private_bucket) as a prefix, 
+        which is a requirement., invalidQuery"
+      Hence,commented below lines.  */
+
     /*hive_partitioning_options {
       mode = "AUTO"
       source_uri_prefix = "gs://${google_storage_bucket.hp_private_bucket.name}"
