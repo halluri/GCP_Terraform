@@ -8,5 +8,7 @@ This project is created as part of providing solution to the challenge below:
 
 To create project using terraform module and generate project_Id and feed as input child resources, I need to set up an organization requiring a domain(which I couldn't), hence used a project created from console.
 
+LeraningModules directory consists of my configuration create while learning about modules, programming cnstructs in terraform.
+
 */
 
